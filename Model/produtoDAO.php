@@ -64,6 +64,8 @@ public function update(produtoVO $value){
             $DB = new DB();
             $DB -> getConnection();
             $query = $DB-> execReader($SQL);
+
+            $VO = new ProdutoVO();
             
         while ($reg = $query -> fetch_array(MYSSQLI_ASSOC)) {
             $vo -> setId($reg["id"]);
@@ -73,6 +75,16 @@ public function update(produtoVO $value){
         }
            return $vo; 
             }
+            public function getALL(){
+                $SQL ="SELECT * FROM produtos";
+                
+                
+                $DB = new DB();
+                $DB -> getConnection();
+                $query = $DB-> execReader($SQL);
+                
+           return $query;
+                }
             
 }
 

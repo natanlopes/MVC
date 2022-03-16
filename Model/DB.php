@@ -15,6 +15,8 @@ public function execrReader($SQL){
 public function execSQL($SQL){
         return $this-> conn -> prepare ($SQL);
 }
-
+public function __destruct(){
+        this-> conn -> close();
+}
 }
 ?>
