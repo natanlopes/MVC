@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
 
 <?php
 
-
+if(isset ($_GET[ "Controller"])) {
+    echo "Controller/".$_GET["Controller"]."Controller.php";
+   
+}
 
 ?>
 
-</body>
-</html>
