@@ -75,7 +75,7 @@ class ProdutoController{
         
         $vo = $model->getByIdModel($_GET["id"]);
         if ($model->deleteModel($vo)){
-             header("Location: http://localhost:50/MVC/produto/listar");
+             header("Location: http://localhost/MVC/produto/listar");
         } else {
             include("View/produtos/error.php");
         }

@@ -9,7 +9,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <form name="" method="POST" action="http://localhost:50/MVC/produto/salvar">
+        <form name="" method="POST" action="http://localhost/MVC/produto/salvar">
             Nome: <input type="text" name="txtNome"/>
             <br/>
             Marca: <input type="text" name="txtMarca"/>

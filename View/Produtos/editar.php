@@ -5,7 +5,7 @@
         <title></title>
     </head>
     <body>
-        <form name="" method="POST" action="http://localhost:50/MVC/produto/update/<?php echo $_SESSION["id"];?>">
+        <form name="" method="POST" action="http://localhost/MVC/produto/update/<?php echo $_SESSION["id"];?>">
             Nome: <input type="text" name="txtNome" value="<?php echo $_SESSION["nome"];?>"/>
             <br/>
             Marca: <input type="text" name="txtMarca"  value="<?php echo $_SESSION["marca"];?>"/>
