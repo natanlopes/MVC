@@ -1,7 +1,7 @@
 <?php
 include("Model/ProdutoModel.php");
-include("Model/produtoVO.php");
-include("Model/produtoDAO.php");
+include("Model/ProdutoVO.php");
+include("Model/ProdutoDAO.php");
 include("Model/DB.php");
 
 class ProdutoController{
@@ -12,7 +12,7 @@ class ProdutoController{
     
     public function salvar(){
         $model = new ProdutoModel();
-        $vo = new produtoVO();
+        $vo = new ProdutoVO();
         $vo->setNome($_POST["txtNome"]);
         $vo->setMarca($_POST["txtMarca"]);
         $vo->setPreco($_POST["txtPreco"]);
@@ -23,19 +23,19 @@ class ProdutoController{
             $_SESSION["msg"] = "Erro ao cadastrar o produto.";
         }
         
-        header("Location: View/Produtos/retorno.php");
+        header("Location: View/produtos/retorno.php");
     }
     
     public function listar(){
         $model = new ProdutoModel();
         
         $_SESSION["data"] = $model->getAllModel();
-        include("View/Produtos/list.php");
+        include("View/produtos/list.php");
     }
     
     public function update(){
         $model = new ProdutoModel();
-        $vo = new produtoVO();
+        $vo = new ProdutoVO();
         
         $vo->setId($_GET["id"]);
         $vo->setNome($_POST["txtNome"]);
@@ -48,11 +48,11 @@ class ProdutoController{
             $_SESSION["msg"] = "Erro ao atualizar o produto.";
         }
 
-        header("Location: ../../View/Produtos/retorno.php");
+        header("Location: ../../View/produtos/retorno.php");
     }
     
     public function novo(){
-        include("View/Produtos/insert.php");
+        include("View/produtos/insert.php");
     }
     
     public function editar(){
@@ -66,7 +66,7 @@ class ProdutoController{
         $_SESSION["marca"] = $vo->getMarca();
         $_SESSION["preco"] = $vo->getPreco();
         
-        include("View/Produtos/editar.php");
+        include("View/produtos/editar.php");
     }
     
     public function delete(){
@@ -77,8 +77,9 @@ class ProdutoController{
         if ($model->deleteModel($vo)){
              header("Location: http://localhost:50/MVC/produto/listar");
         } else {
-            include("View/Produtos/error.php");
+            include("View/produtos/error.php");
         }
     }
 }
 ?>
+
